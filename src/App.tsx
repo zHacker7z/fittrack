@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
-import { Dumbbell, Calculator, Home, UtensilsCrossed, LogOut, User, Menu } from "lucide-react";
+import {
+  Dumbbell,
+  Calculator,
+  Home,
+  UtensilsCrossed,
+  LogOut,
+  User,
+  Menu,
+} from "lucide-react";
 import { Hero } from "./components/Hero";
 import { WorkoutBuilder } from "./components/WorkoutBuilder";
 import { CalorieCalculator } from "./components/CalorieCalculator";
@@ -65,7 +73,7 @@ export default function App() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
+              <div className="w-10 h-10 bg-linear-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
                 <Dumbbell className="w-6 h-6 text-white" />
               </div>
               <span className="text-xl text-white">FitTracker</span>
@@ -162,7 +170,7 @@ export default function App() {
                 >
                   <SheetHeader>
                     <SheetTitle className="flex items-center gap-2 text-white">
-                      <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
+                      <div className="w-8 h-8 bg-linear-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
                         <Dumbbell className="w-5 h-5 text-white" />
                       </div>
                       Menu
@@ -175,13 +183,14 @@ export default function App() {
                     <button
                       onClick={() => {
                         setCurrentTab("home");
-                        setMobileMenuOpen(false);
+                        setTimeout(() => setMobileMenuOpen(false), 300);
                       }}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 transform hover:translate-x-1 ${
                         currentTab === "home"
                           ? "bg-purple-600 text-white"
                           : "text-gray-300 hover:text-white hover:bg-purple-600/20"
                       }`}
+                      style={{ animationDelay: "0.1s" }}
                     >
                       <Home className="w-5 h-5" />
                       <span>Início</span>
@@ -189,13 +198,14 @@ export default function App() {
                     <button
                       onClick={() => {
                         setCurrentTab("workout");
-                        setMobileMenuOpen(false);
+                        setTimeout(() => setMobileMenuOpen(false), 300);
                       }}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 transform hover:translate-x-1 ${
                         currentTab === "workout"
                           ? "bg-purple-600 text-white"
                           : "text-gray-300 hover:text-white hover:bg-purple-600/20"
                       }`}
+                      style={{ animationDelay: "0.2s" }}
                     >
                       <Dumbbell className="w-5 h-5" />
                       <span>Treinos</span>
@@ -203,13 +213,14 @@ export default function App() {
                     <button
                       onClick={() => {
                         setCurrentTab("food");
-                        setMobileMenuOpen(false);
+                        setTimeout(() => setMobileMenuOpen(false), 300);
                       }}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 transform hover:translate-x-1 ${
                         currentTab === "food"
                           ? "bg-purple-600 text-white"
                           : "text-gray-300 hover:text-white hover:bg-purple-600/20"
                       }`}
+                      style={{ animationDelay: "0.3s" }}
                     >
                       <UtensilsCrossed className="w-5 h-5" />
                       <span>Refeições</span>
@@ -217,13 +228,14 @@ export default function App() {
                     <button
                       onClick={() => {
                         setCurrentTab("calories");
-                        setMobileMenuOpen(false);
+                        setTimeout(() => setMobileMenuOpen(false), 300);
                       }}
-                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 transform hover:translate-x-1 ${
                         currentTab === "calories"
                           ? "bg-purple-600 text-white"
                           : "text-gray-300 hover:text-white hover:bg-purple-600/20"
                       }`}
+                      style={{ animationDelay: "0.4s" }}
                     >
                       <Calculator className="w-5 h-5" />
                       <span>Calculadora</span>
@@ -233,7 +245,7 @@ export default function App() {
 
                     <button
                       onClick={handleLogout}
-                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-red-500/20 transition-all"
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-red-500/20 transition-all duration-300"
                     >
                       <LogOut className="w-5 h-5" />
                       <span>Sair</span>
@@ -321,7 +333,7 @@ export default function App() {
       <footer className="bg-black/50 border-t border-purple-500/20 py-8 mt-20">
         <div className="container mx-auto px-4 text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-linear-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
               <Dumbbell className="w-5 h-5 text-white" />
             </div>
             <span className="text-white">FitTracker</span>

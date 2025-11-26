@@ -1,10 +1,33 @@
 import { useState, useEffect, useRef } from "react";
-import { User, Camera, Save, TrendingUp, Dumbbell, UtensilsCrossed, Calendar, Target, Edit2, Palette } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "./ui/card";
+import {
+  User,
+  Camera,
+  Save,
+  TrendingUp,
+  Dumbbell,
+  UtensilsCrossed,
+  Calendar,
+  Target,
+  Edit2,
+  Palette,
+} from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "./ui/card";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { toast } from "sonner";
@@ -227,9 +250,9 @@ export function Profile({ username }: ProfileProps) {
   return (
     <div className="max-w-5xl mx-auto space-y-6">
       {/* Profile Header */}
-      <Card className="bg-gradient-to-br from-purple-900/40 to-violet-900/40 backdrop-blur border-purple-500/30 overflow-hidden">
+      <Card className="bg-linear-to-br from-purple-900/40 to-violet-900/40 backdrop-blur border-purple-500/30 overflow-hidden">
         <div
-          className={`h-32 bg-gradient-to-r ${currentColor.gradient} relative`}
+          className={`h-32 bg-linear-to-r ${currentColor.gradient} relative`}
         >
           {/* Color Picker Button */}
           <div className="absolute top-3 right-3 md:top-4 md:right-4">

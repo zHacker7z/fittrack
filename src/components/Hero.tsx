@@ -6,7 +6,7 @@ interface HeroProps {
 
 export function Hero({ onGetStarted }: HeroProps) {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-purple-950 to-black">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-black via-purple-950 to-black">
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 opacity-20">
         <div
@@ -23,7 +23,7 @@ export function Hero({ onGetStarted }: HeroProps) {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Main Heading */}
-          <h1 className="font-Righteous text-7xl md:text-9xl mb-4 bg-gradient-to-r from-white via-purple-200 to-violet-400 bg-clip-text text-transparent tracking-wider leading-none animate-pulse">
+          <h1 className="font-Righteous text-7xl md:text-9xl mb-4 bg-linear-to-r from-white via-purple-200 to-violet-400 bg-clip-text text-transparent tracking-wider leading-none animate-pulse">
             Fit Tracker
           </h1>
           <h2 className="text-2xl md:text-4xl mb-8 text-purple-300 font-semibold tracking-wide">
@@ -39,8 +39,8 @@ export function Hero({ onGetStarted }: HeroProps) {
 
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="group bg-gradient-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer transform hover:scale-105">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-violet-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <div className="group bg-linear-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer transform hover:scale-105">
+              <div className="w-14 h-14 bg-linear-to-br from-purple-600 to-violet-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Dumbbell className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-white mb-2 font-semibold text-lg">
@@ -51,8 +51,8 @@ export function Hero({ onGetStarted }: HeroProps) {
               </p>
             </div>
 
-            <div className="group bg-gradient-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer transform hover:scale-105">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-violet-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <div className="group bg-linear-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer transform hover:scale-105">
+              <div className="w-14 h-14 bg-linear-to-br from-purple-600 to-violet-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <TrendingUp className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-white mb-2 font-semibold text-lg">
@@ -63,8 +63,8 @@ export function Hero({ onGetStarted }: HeroProps) {
               </p>
             </div>
 
-            <div className="group bg-gradient-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer transform hover:scale-105">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-600 to-violet-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+            <div className="group bg-linear-to-br from-purple-900/40 to-violet-900/40 backdrop-blur-sm border border-purple-500/30 rounded-xl p-6 hover:border-purple-500/60 hover:shadow-lg hover:shadow-purple-500/30 transition-all cursor-pointer transform hover:scale-105">
+              <div className="w-14 h-14 bg-linear-to-br from-purple-600 to-violet-600 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Zap className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-white mb-2 font-semibold text-lg">
@@ -80,7 +80,7 @@ export function Hero({ onGetStarted }: HeroProps) {
           <div className="flex items-center justify-center">
             <button
               onClick={onGetStarted}
-              className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white rounded-lg font-semibold text-lg transition-all shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transform hover:scale-105 flex items-center gap-2"
+              className="group px-8 py-4 bg-linear-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white rounded-lg font-semibold text-lg transition-all shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transform hover:scale-105 flex items-center gap-2"
             >
               Começar Treinos
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
