@@ -77,19 +77,13 @@ export function Hero({ onGetStarted }: HeroProps) {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex items-center justify-center">
             <button
               onClick={onGetStarted}
               className="group px-8 py-4 bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 text-white rounded-lg font-semibold text-lg transition-all shadow-lg shadow-purple-500/50 hover:shadow-purple-500/80 transform hover:scale-105 flex items-center gap-2"
             >
               Começar Treinos
               <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </button>
-            <button
-              onClick={onGetStarted}
-              className="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border-2 border-white/30 rounded-lg font-semibold text-lg transition-all transform hover:scale-105"
-            >
-              Explorar Recursos
             </button>
           </div>
         </div>

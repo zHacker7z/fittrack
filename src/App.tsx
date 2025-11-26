@@ -1,12 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Dumbbell,
-  Calculator,
-  Home,
-  UtensilsCrossed,
-  LogOut,
-  User,
-} from "lucide-react";
+import { Dumbbell, Calculator, Home, UtensilsCrossed, LogOut, User, Menu } from "lucide-react";
 import { Hero } from "./components/Hero";
 import { WorkoutBuilder } from "./components/WorkoutBuilder";
 import { CalorieCalculator } from "./components/CalorieCalculator";
@@ -17,10 +10,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Toaster } from "./components/ui/sonner";
 import { Button } from "./components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "./components/ui/avatar";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetDescription,
+  SheetTrigger,
+} from "./components/ui/sheet";
 
 export default function App() {
   const [currentTab, setCurrentTab] = useState("home");
   const [currentUser, setCurrentUser] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Verificar se há usuário logado ao carregar
   useEffect(() => {
@@ -69,7 +71,8 @@ export default function App() {
               <span className="text-xl text-white">FitTracker</span>
             </div>
 
-            <div className="flex items-center gap-2">
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-2">
               <button
                 onClick={() => setCurrentTab("home")}
                 className={`px-4 py-2 rounded-lg transition-all ${
@@ -116,7 +119,8 @@ export default function App() {
               </button>
             </div>
 
-            <div className="flex items-center gap-3">
+            {/* Desktop User Menu */}
+            <div className="hidden md:flex items-center gap-3">
               <button
                 onClick={() => setCurrentTab("profile")}
                 className="flex items-center gap-2 px-3 py-1.5 bg-purple-500/20 rounded-lg border border-purple-500/30 hover:bg-purple-500/30 transition-colors"
@@ -141,6 +145,118 @@ export default function App() {
                 <LogOut className="w-4 h-4 mr-2" />
                 Sair
               </Button>
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="flex md:hidden items-center gap-3">
+              {/* Mobile Menu Button */}
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <button className="p-2 text-white hover:bg-purple-600/20 rounded-lg transition-colors">
+                    <Menu className="w-6 h-6" />
+                  </button>
+                </SheetTrigger>
+                <SheetContent
+                  side="left"
+                  className="bg-black/95 border-purple-500/20 w-80"
+                >
+                  <SheetHeader>
+                    <SheetTitle className="flex items-center gap-2 text-white">
+                      <div className="w-8 h-8 bg-gradient-to-br from-purple-600 to-violet-600 rounded-lg flex items-center justify-center">
+                        <Dumbbell className="w-5 h-5 text-white" />
+                      </div>
+                      Menu
+                    </SheetTitle>
+                    <SheetDescription className="text-gray-400">
+                      Navegue pelas funcionalidades do FitTracker
+                    </SheetDescription>
+                  </SheetHeader>
+                  <div className="flex flex-col gap-2 mt-6">
+                    <button
+                      onClick={() => {
+                        setCurrentTab("home");
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                        currentTab === "home"
+                          ? "bg-purple-600 text-white"
+                          : "text-gray-300 hover:text-white hover:bg-purple-600/20"
+                      }`}
+                    >
+                      <Home className="w-5 h-5" />
+                      <span>Início</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setCurrentTab("workout");
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                        currentTab === "workout"
+                          ? "bg-purple-600 text-white"
+                          : "text-gray-300 hover:text-white hover:bg-purple-600/20"
+                      }`}
+                    >
+                      <Dumbbell className="w-5 h-5" />
+                      <span>Treinos</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setCurrentTab("food");
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                        currentTab === "food"
+                          ? "bg-purple-600 text-white"
+                          : "text-gray-300 hover:text-white hover:bg-purple-600/20"
+                      }`}
+                    >
+                      <UtensilsCrossed className="w-5 h-5" />
+                      <span>Refeições</span>
+                    </button>
+                    <button
+                      onClick={() => {
+                        setCurrentTab("calories");
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${
+                        currentTab === "calories"
+                          ? "bg-purple-600 text-white"
+                          : "text-gray-300 hover:text-white hover:bg-purple-600/20"
+                      }`}
+                    >
+                      <Calculator className="w-5 h-5" />
+                      <span>Calculadora</span>
+                    </button>
+
+                    <div className="border-t border-purple-500/20 my-4"></div>
+
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg text-gray-300 hover:text-white hover:bg-red-500/20 transition-all"
+                    >
+                      <LogOut className="w-5 h-5" />
+                      <span>Sair</span>
+                    </button>
+                  </div>
+                </SheetContent>
+              </Sheet>
+
+              {/* Mobile Profile Button */}
+              <button
+                onClick={() => setCurrentTab("profile")}
+                className="flex items-center justify-center w-10 h-10 bg-purple-500/20 rounded-lg border border-purple-500/30 hover:bg-purple-500/30 transition-colors"
+              >
+                <Avatar className="w-8 h-8">
+                  <AvatarImage
+                    src={getUserProfilePicture()}
+                    alt={currentUser}
+                  />
+                  <AvatarFallback className="bg-purple-600 text-white text-xs">
+                    {currentUser.charAt(0).toUpperCase()}
+                  </AvatarFallback>
+                </Avatar>
+              </button>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Sarala:wght@400;700&family=Stack+Sans+Notch:wght@200..700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -135,6 +135,18 @@
 
   .font-bebas {
     font-family: "Bebas Neue", cursive;
+  }
+
+  /* Cursor pointer para todos os elementos clicáveis */
+  button,
+  [role="button"],
+  [type="button"],
+  [type="submit"],
+  [type="reset"],
+  a,
+  label[for],
+  select {
+    cursor: pointer;
   }
 }
 

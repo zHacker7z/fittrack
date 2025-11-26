@@ -1,23 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import { Toaster as Sonner, ToasterProps } from "sonner";
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
-
-  // Detecta automaticamente o tema do sistema
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-color-scheme: dark)");
-    const listener = () => {
-      setTheme(media.matches ? "dark" : "light");
-    };
-
-    listener(); // define o tema inicial
-    media.addEventListener("change", listener);
-
-    return () => media.removeEventListener("change", listener);
-  }, []);
+  const { theme = "system" } = useTheme();
 
   return (
     <Sonner

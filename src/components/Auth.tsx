@@ -40,14 +40,14 @@ export function Auth({ onLogin }: AuthProps) {
     const users = JSON.parse(localStorage.getItem("fittracker_users") || "{}");
 
     if (!users[loginUsername]) {
-      setLoginError("Senha incorreta ou o Usuario não existe!");
-      toast.error("Senha incorreta ou o Usuario não existe!");
+      setLoginError("Usuário não encontrado!");
+      toast.error("Usuário não encontrado!");
       return;
     }
 
     if (users[loginUsername].password !== loginPassword) {
-      setLoginError("Senha incorreta ou o Usuario não existe!");
-      toast.error("Senha incorreta ou o Usuario não existe!");
+      setLoginError("Senha incorreta! Verifique sua senha e tente novamente.");
+      toast.error("Senha incorreta!");
       return;
     }
 
@@ -126,7 +126,7 @@ export function Auth({ onLogin }: AuthProps) {
             <Dumbbell className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-4xl mb-2 text-white">FitTracker</h1>
-          <p className="text-gray-400">Seu Sistema Fitness Completo</p>
+          <p className="text-gray-400">Seu sistema completo de fitness</p>
         </div>
 
         <Card className="bg-card/50 backdrop-blur border-purple-500/20">
