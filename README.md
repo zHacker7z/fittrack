@@ -2,6 +2,10 @@
 
 Sistema completo de controle de treinos e nutrição desenvolvido com React, TypeScript, Vite e Tailwind CSS.
 
+## 🚀 Demonstração
+
+👉 Acesse o site: **https://zhacker7z.github.io/fittrack**
+
 ## 🚀 Recursos
 
 - ✅ **Autenticação completa** - Sistema de login e cadastro com dados persistidos
